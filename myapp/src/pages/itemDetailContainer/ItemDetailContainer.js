@@ -187,24 +187,3 @@ const ItemDetailContainer = () => {
             
 
 export default ItemDetailContainer;
-
-
-
-
-
-
-
-
-
-
-// {producto.map((prod) => (
-//     <div className='ItemDetailContainer'>
-//     <ItemDetail
-//       alt={prod.nombre}
-//       title={prod.nombre}
-//       precio={prod.precio}
-//       src={prod.url}
-//       stock={prod.stock}
-//     />
-//     </div>
-//   ))}
