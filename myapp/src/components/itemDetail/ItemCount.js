@@ -1,21 +1,30 @@
 import "./ItemDetail.css";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const ItemCount = ({ stock }) => {
-  const [click, pulsar] = useState(0);
+
+const ItemCount = ({ data }) => {
+
+  const {addCart}= useContext(CartContext);
+  
+  const [click, pulsar] = useState(1);
 
   const Sumar = () => {
-    if (click < stock) {
+    if (click < data.stock) {
       pulsar(click + 1);
     }
   };
 
   const Restar = () => {
-    if (click > 0) {
-      pulsar(click - 1);
+    if (click > 1) {
+      pulsar(click - 1)
     }
   };
-  useEffect(() => {}, [click]);
+
+  const addToCart = () => {
+    addCart(data,click)
+  };
+
 
   return (
     <div className="click-container">
@@ -28,7 +37,7 @@ const ItemCount = ({ stock }) => {
           🔽
         </p>
       </div>
-      <button className="btn btn-secondary me-md-2">Agregar al Carrito</button>
+      <button onClick={addToCart} className="btn btn-secondary me-md-2">Send Cart</button>
     </div>
   );
 };

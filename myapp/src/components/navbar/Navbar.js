@@ -2,9 +2,16 @@ import "./navbar.css";
 import CartIcon from "./NavCartIcon";
 import NavLogo from "./NavLogo";
 import Logo from "../../img/logo.png";
+import {useContext} from 'react'
 import { NavLink } from 'react-router-dom'
+import {CartContext} from '../../context/CartContext'
 
 const NavBar = () => {
+  const {cart} = useContext(CartContext);
+  
+  const cantidad = cart.reduce((acc, curr) => {
+    return acc + curr.unidades;
+  }, 0);
 
 const categoria = {
   pintura:"Pintura",
@@ -12,8 +19,6 @@ const categoria = {
   escultura:"Escultura",
   grabado:"Grabado"
 }
-
-
 
   return (
     <div className="nav-bar">
@@ -41,7 +46,7 @@ const categoria = {
             <li className="nav-item">
             <NavLink  to={`/categoria/${categoria.escultura}`} className="nav-link" >Esculturas </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"> 
             <NavLink  to={`/categoria/${categoria.dibujo}`} className="nav-link" >Dibujos</NavLink>
             </li>
             <li className="nav-item">
@@ -53,7 +58,7 @@ const categoria = {
         <div className="cartContainer">
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav"> 
-              <CartIcon items={0} />
+              <CartIcon items={cantidad} />
             </ul>
           </div>
         </div>

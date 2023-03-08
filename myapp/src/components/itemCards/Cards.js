@@ -16,12 +16,9 @@ const Card = ({ src, alt, title, precio, id }) => {
           <strong>Precio: $ {precio}</strong>
         </h6>
         <button className="btn btn-secondary me-md-2">
-          <Link className="Link" to={`/detail/${id}`}>
-            {" "}
-            View{" "}
-          </Link>
+          <Link className="Link" to={`/detail/${id}`}>View</Link> 
         </button>
-      </div>
+      </div> 
     </div>
   );
 };

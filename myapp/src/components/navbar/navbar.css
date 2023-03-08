@@ -2,6 +2,7 @@
   transition: all 0.25s;
   margin-left: 20px;
   border-radius: 5%;
+  border: none;
 }
 .nav-link:hover {
   transform: translateY(-1px);
@@ -23,6 +24,7 @@
 }
 .cart-items {
   margin-top: 8px;
+  margin-left: 10px;
 }
 #ul {
   display: flex;

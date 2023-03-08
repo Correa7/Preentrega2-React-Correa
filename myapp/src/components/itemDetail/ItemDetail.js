@@ -1,7 +1,8 @@
 import "./ItemDetail.css";
 import ItemCount from "./ItemCount";
 
-const ItemDetail = ({nombre,src,stock,precio,id}) => { 
+const ItemDetail = ({nombre,src,stock,precio,id,categoria}) => { 
+  let data = {id:id, nombre:nombre, url:src, precio:precio, stock:stock, categoria:categoria}
   return (
           <div key={id} className="card-detail"> 
             <div className="card-img">
@@ -26,7 +27,7 @@ const ItemDetail = ({nombre,src,stock,precio,id}) => {
                   </p>
                 </div>
                 <div>
-                  <ItemCount stock={stock} />
+                  <ItemCount data={data} />
               </div>
             </div>
            

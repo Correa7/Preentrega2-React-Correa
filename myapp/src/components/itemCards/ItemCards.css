@@ -63,17 +63,6 @@
   margin-top: 10px;
 }
 
-.greeting {
-  width: 50%;
-  height: 150px;
-  border: solid;
-  border-color: rgb(242, 41, 41);
-  border-radius: 12px;
-  margin-left: 250px;
-  margin-top: 50px;
-  padding: 40px;
-  box-shadow: hsl(0, 93%, 49%) 0 0 16px;
-}
 .Link {
   color: aliceblue;
   text-decoration: none;

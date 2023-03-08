@@ -162,11 +162,10 @@ const CardsList = ({ categoria }) => {
     });
   }, []);
 
-  let b = produ.filter((p) => p.categoria === categoria);
-  // console.log(b);
-
+  let prodFilter = produ.filter((p) => p.categoria === categoria);
+ 
   if (categoria) {
-    return b.map((prod) => (
+    return prodFilter.map((prod) => (
       <Card 
         key={prod.id}
         alt={prod.nombre}
